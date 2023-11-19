@@ -1,0 +1,16 @@
+# Makefile for pi_fftcs5, Takuyo Ooura's
+# Pi calculation for *nix or DOS
+
+CCOPTS = -omaxtnrih -ol+ -oe=32 -zp4 -5r -ei -j -zq -zc
+GLOBOBJS = pi_fftcs.obj fftsg_h.obj
+
+all: pi_css5.exe
+
+pi_css5.exe: $(GLOBOBJS)
+	wlink @pi_css5.lnk
+
+.c.obj:
+	wcc386 $(CCOPTS) -fo=$[*.obj $[*.c
+
+clean: .symbolic
+	del $(GLOBOBJS) pi_css5.map pi_css5.exe

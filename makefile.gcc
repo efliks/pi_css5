@@ -1,0 +1,18 @@
+# Makefile for pi_fftcs5, Takuyo Ooura's
+# Pi calculation for *nix or DOS
+
+CFLAGS = -Wall -pedantic -O -fomit-frame-pointer -funroll-loops -malign-double
+
+all: pi_css5
+
+pi_css5: pi_fftcs.o fftsg_h.o
+	gcc pi_fftcs.o fftsg_h.o -lm -static -o pi_css5
+
+pi_fftcs.o: pi_fftcs.c
+	gcc $(CFLAGS) -c pi_fftcs.c -o pi_fftcs.o
+
+fftsg_h.o: fftsg_h.c
+	gcc $(CFLAGS) -c fftsg_h.c -o fftsg_h.o
+
+clean:
+	rm pi_fftcs.o fftsg_h.o pi_css5

@@ -1,0 +1,18 @@
+
+# pi_css5.exe linker directive file
+
+option map
+option stack=65536
+option stub=wstub
+option statics
+option symfile
+option verbose
+option eliminate
+libpath %WATCOM%/lib386
+libpath %WATCOM%/lib386/dos
+lib noemu387.lib
+format os2 le
+name pi_css5
+
+file pi_fftcs.obj
+file fftsg_h.obj
